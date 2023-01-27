@@ -1,0 +1,273 @@
+:root {
+  --dark: #232323;
+  --orange: #FE8C01;
+  --gray: #C4C4C4;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a сбрасываем до дефолтных стилей */
+a {
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.wrapper {
+  background-color: #fff;
+  color: var(--dark);
+  font-size: 20px;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.wrapper__container {
+  max-width: 1650px;
+  margin: auto;
+}
+
+/* Меню */
+
+.menu {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.menu__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu__title {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 78px;
+}
+
+.menu__line {
+  width: 280px;
+  height: 8px;
+  background: var(--orange);
+  border-radius: 50px;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.menu-item {
+  width: 250px;
+  height: 250px;
+  background-color: #E9F8FB;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.menu-item:hover {
+  background-color: var(--orange);
+  color: #FFFFFF;
+}
+
+.menu-item svg path {
+  transition: all .3s ease-in-out;
+}
+
+.menu-item:hover svg path {
+  fill: #fff;
+}
+
+.header__link {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #818282;
+}
+
+.header__link.active {
+  color: var(--orange);
+}
+
+.catalog {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.catalog__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.catalog__item {
+  height: 390px;
+  width: 390px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.catalog__item__img {
+  width: 390px;
+  height: 390px;
+}
+
+.catalog__item__img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.catalog-item__content {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 40px;
+  transition: .3s ease-in-out;
+  z-index: 6;
+  color: #FFFFFF;
+  gap: 15px;
+}
+
+.catalog__item__name {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.catalog__item__gram {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 14px;
+}
+
+.gray {
+  transition: 0.5s;
+}
+
+.catalog__item .gray {
+  transition: all .3s ease-in-out;
+}
+
+.catalog__item:hover .gray {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 16px;
+  z-index: 3;
+}
+
+.catalog__item:hover .catalog-item__content {
+  opacity: 1;
+}
+
+.catalog__button {
+  background: #E9F8FB;
+  border-radius: 100px;
+  padding: 20px 72px;
+}
+
+.menu__header {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-items {
+  margin-top: 60px;
+}
+
+.catalog__button {
+  margin-bottom: 40px;
+}
